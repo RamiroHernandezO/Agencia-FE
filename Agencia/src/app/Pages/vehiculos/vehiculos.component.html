@@ -1,0 +1,84 @@
+<mat-card class="mat-primary-bg">
+    <mat-card-content class="flex-container">
+        <div class="flex-item">
+            <h2>Vehiculos en el taller</h2>
+        </div>
+        <div class="flex-item align-right">
+            <a class="btn btn-success" (click)="openNuevoVehiculo()">
+                <i class="material-icons">add_circle</i>Nuevo
+            </a>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<div><!-- cdkDropList class="Vehiculo-list" [cdkDropListData]="Vehiculo" (cdkDropListDropped)="drop($event)"> -->
+    <mat-table [dataSource]="Vehiculo">
+        <ng-container matColumnDef="folio">
+            <mat-header-cell *matHeaderCellDef> Folio </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.folio }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="marca">
+            <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.marca }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="modelo">
+            <mat-header-cell *matHeaderCellDef> Modelo </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.modelo }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="año">
+            <mat-header-cell *matHeaderCellDef> Año </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.ano }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dueño">
+            <mat-header-cell *matHeaderCellDef> Dueño </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.dueno }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="proximoServicio">
+            <mat-header-cell *matHeaderCellDef> Proximo Servicio </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.proximoServicio | date:'MM-dd-yyyy' }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="fechaServicio">
+            <mat-header-cell *matHeaderCellDef> Fecha de Servicio </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.fechaServicio | date:'MM-dd-yyyy' }}</mat-cell>
+          </ng-container>
+        <ng-container matColumnDef="estatus">
+            <mat-header-cell *matHeaderCellDef> Estatus </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.estatus }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="cantidad">
+            <mat-header-cell *matHeaderCellDef> Cantidad </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.cantidad }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.nombre }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="descripcion">
+            <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.descripcion }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="precio">
+            <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
+            <mat-cell *matCellDef="let item">{{ item.precio }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="opciones">
+            <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+            <mat-cell *matCellDef="let item">
+                <a (click)="openEditarVehiculo(item.id,item.nombre,item.orden)">
+                    <i class="material-icons btn-crud-editar">create</i>
+                </a> |
+                <a (click)="openEliminarVehiculo(item.id,item.nombre)">
+                    <i class="material-icons btn-crud-borrar">delete_forever</i>
+                </a>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['folio','marca','modelo','año','dueño','proximoServicio','fechaServicio','estatus','cantidad','nombre','descripcion','precio', 'opciones']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['folio','marca','modelo','año','dueño','proximoServicio','fechaServicio','estatus','cantidad','nombre','descripcion','precio', 'opciones'];" 
+        >
+                 <!-- cdkDrag
+                 [cdkDragData]="row"
+                 [style.display]="'flex'" -->
+                 
+        </mat-row>
+    </mat-table>
+</div>

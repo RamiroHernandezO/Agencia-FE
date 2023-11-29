@@ -1,0 +1,18 @@
+div {
+    width: 90vw; 
+    height: 90vh; 
+    display: block;
+    overflow: hidden;
+  }
+  
+  canvas {
+    width: 90%; 
+    height: 90%; 
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100vw;
+    height: 100vh;
+}

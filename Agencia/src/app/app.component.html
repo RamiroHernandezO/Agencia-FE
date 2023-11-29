@@ -1,0 +1,7 @@
+
+    <app-sidebar (mouseenter)="toggleSidebar()" (mouseleave)="toggleSidebar()" *ngIf="router.url !== '/login' && router.url !== '/registrarse'"></app-sidebar>
+
+    <div class="main-content" [ngStyle]="mainContentStyle">
+      <router-outlet></router-outlet>
+    </div>
+  

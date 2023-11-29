@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Iniciar Sesión</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="login()">
+        <mat-form-field appearance="fill">
+          <mat-label>Usuario</mat-label>
+          <input matInput [(ngModel)]="username" type="text" placeholder="Nombre de Usuario" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="password" type="password" placeholder="Contraseña" name="password" required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Iniciar Sesión</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button routerLink="/registrarse">Registrarse</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

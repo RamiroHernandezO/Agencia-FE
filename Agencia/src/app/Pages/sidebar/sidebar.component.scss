@@ -1,0 +1,42 @@
+.sidebar {
+  width: 70px; 
+  height: 100vh;
+  position: fixed;
+  transition: width 0.3s;
+  overflow: hidden; 
+  background-color: darkgray;
+  z-index: 1000; 
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.sidebar-item mat-icon {
+  margin-right: 10px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.sidebar-text {
+  display: none; 
+  transition: opacity 0.3s; 
+  opacity: 0; 
+  font-size: 18px;
+}
+
+.sidebar:hover .sidebar-text {
+  display: inline;
+  opacity: 1; 
+}
+a {
+  color: inherit;        
+  text-decoration: none;
+}

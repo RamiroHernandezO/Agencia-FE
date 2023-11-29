@@ -1,0 +1,83 @@
+<mat-card class="mat-primary-bg">
+    <mat-card-content class="flex-container">
+        <div class="flex-item">
+            <h2>Nuevo Vehiculo</h2>
+        </div>
+    </mat-card-content>
+</mat-card>
+<br>
+<form (ngSubmit)="onSubmit()">
+    <div class="flex-container">
+        <mat-form-field class="flex-item">
+            <mat-label>Folio</mat-label>
+            <input matInput [(ngModel)]="folio" name="folio" disabled>
+        </mat-form-field>
+
+        <mat-form-field class="flex-item">
+            <mat-label>Marca</mat-label>
+            <mat-select [(ngModel)]="marca" name="marca" (selectionChange)="onMarcaChange()">
+                <mat-option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="flex-item">
+            <mat-label>Modelo</mat-label>
+            <mat-select [(ngModel)]="modelo" name="modelo">
+                <mat-option *ngFor="let modelo of modelos" [value]="modelo">{{ modelo }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="flex-container">
+        <mat-form-field class="flex-item">
+            <mat-label>Año</mat-label>
+            <input matInput [(ngModel)]="anio" name="año">
+        </mat-form-field>
+
+        <mat-form-field class="flex-item">
+            <mat-label>Dueño</mat-label>
+            <input matInput [(ngModel)]="duenio" name="dueño">
+        </mat-form-field>
+    </div>
+
+    <div class="flex-container">
+        <mat-form-field class="flex-item">
+            <mat-label>Próximo Servicio</mat-label>
+            <input matInput [(ngModel)]="proximoServicio" [matDatepicker]="proximoServicioPicker" name="proximoServicio">
+            <mat-datepicker-toggle matSuffix [for]="proximoServicioPicker"></mat-datepicker-toggle>
+            <mat-datepicker #proximoServicioPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="flex-item">
+            <mat-label>Fecha de Servicio</mat-label>
+            <input matInput [(ngModel)]="fechaServicio" [matDatepicker]="fechaServicioPicker" name="fechaServicio">
+            <mat-datepicker-toggle matSuffix [for]="fechaServicioPicker"></mat-datepicker-toggle>
+            <mat-datepicker #fechaServicioPicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="flex-container">
+        <mat-form-field class="flex-item">
+            <mat-label>Estatus</mat-label>
+            <input matInput [(ngModel)]="estatus" name="estatus" disabled>
+        </mat-form-field>
+
+        <mat-form-field class="flex-item">
+            <mat-label>Cantidad</mat-label>
+            <input matInput [(ngModel)]="cantidad" name="cantidad" type="number">
+        </mat-form-field>
+    </div>
+
+    <div class="flex-container">
+        <mat-form-field class="flex-item">
+            <mat-label>Refaccion</mat-label>
+            <mat-select [(ngModel)]="refaccion" name="refaccion">
+                <mat-option *ngFor="let ref of refacciones" [value]="ref.id">{{ ref.nombre }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="align-right">
+        <button mat-raised-button color="primary" class="btn-success" type="submit">Guardar</button>
+    </div>
+</form>

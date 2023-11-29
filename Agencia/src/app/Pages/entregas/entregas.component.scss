@@ -1,0 +1,28 @@
+.mat-primary-bg {
+    background-color: #00687F;
+    color: white;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-item {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-success{
+    display: flex;
+    align-items: center;
+}
+.btn-crud-editar {
+    color: orange;
+}
+.btn-crud-borrar {
+    color: red;
+}

@@ -1,0 +1,44 @@
+<div class="sidebar">
+  <div class="sidebar-item">
+    <a routerLink="/dashboard">
+      <mat-icon>home</mat-icon>
+      <span class="sidebar-text">Inicio</span>
+    </a>
+  </div>
+  <div class="sidebar-item">
+    <a routerLink="/vehiculos">
+    <mat-icon>directions_car</mat-icon> 
+    <span class="sidebar-text">Vehículos</span>
+  </a>
+  </div>
+  
+  <div class="sidebar-item">
+    <a routerLink="/refacciones">
+    <mat-icon>build</mat-icon>
+    <span class="sidebar-text">Refacciones</span>
+  </a>
+  </div>
+  
+  <div class="sidebar-item">
+    <a routerLink="/servicios">
+    <mat-icon>handyman</mat-icon> 
+    <span class="sidebar-text">Servicios</span>
+  </a>
+  </div>
+  
+  <div class="sidebar-item">
+    <a routerLink="/entregas">
+    <mat-icon>local_shipping</mat-icon>
+    <span class="sidebar-text">Entregas</span>
+  </a>
+  </div>
+  
+  <div class="sidebar-item">
+    <a (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span class="sidebar-text">Log Out</span>
+    </a>
+  </div>
+  
+  <!-- Más items aquí -->
+</div>
